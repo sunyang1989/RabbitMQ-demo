@@ -1,4 +1,4 @@
-package com.sun.amqp;
+package com.sun.amqp.simple;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
