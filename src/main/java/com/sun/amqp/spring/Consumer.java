@@ -43,9 +43,9 @@ public class Consumer {
         RabbitTemplate template = new RabbitTemplate(connectionFactory());
         // The routing key is set to the name of the queue by the broker for the
         // default exchange.
-        template.setRoutingKey(this.quene);
+        template.setRoutingKey(quene);
         // Where we will synchronously receive messages from
-        template.setQueue(this.quene);
+        template.setQueue(quene);
         return template;
     }
 
@@ -53,7 +53,7 @@ public class Consumer {
     public SimpleMessageListenerContainer listenerContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory());
-        container.setQueueNames(this.quene);
+        container.setQueueNames(quene);
         container.setMessageListener(new MessageListenerAdapter(
                 new ReceiveMsgHandler()));
         return container;
@@ -61,11 +61,5 @@ public class Consumer {
 
     public static void main(String[] args) {
         new AnnotationConfigApplicationContext(Consumer.class);
-    }
-}
-
-class ReceiveMsgHandler {
-    public void handleMessage(String text) {
-        System.out.println("Received: " + text);
     }
 }

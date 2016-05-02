@@ -14,14 +14,14 @@ import java.util.concurrent.ScheduledExecutorService;
  */
 public class Client {
 
-    public static final String HOST = "tcp://localhost:1883";
+    public static final String HOST = "tcp://localhost:61613";
     public static final String TOPIC = "topic/local";
     private static final String clientid = "client";
 
     private MqttClient client;
     private MqttConnectOptions options;
-    private String userName = "sunyang";
-    private String passWord = "123456";
+    private String userName = "admin";
+    private String passWord = "password";
 
     private ScheduledExecutorService scheduler;
 

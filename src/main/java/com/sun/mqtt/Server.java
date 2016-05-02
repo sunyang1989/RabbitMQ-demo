@@ -14,8 +14,8 @@ public class Server {
 
     private MqttClient client;
     private MqttTopic topic;
-    private String userName = "sunyang";
-    private String passWord = "123456";
+    private String userName = "guest";
+    private String passWord = "guest";
 
     private MqttMessage message;
 
