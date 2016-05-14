@@ -31,8 +31,6 @@ public class Provider {
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
         }
-
-
         /*关闭连接*/
         channel.close();
         connection.close();
